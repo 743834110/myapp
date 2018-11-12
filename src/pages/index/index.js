@@ -15,12 +15,31 @@ import {
 } from '@tarojs/components'
 import {AtButton, AtNavBar} from 'taro-ui'
 import './index.css'
+import {pushMessage} from "../../actions/messages";
 
-class Index extends Component {
+
+const mapStateToProps = ({messages, ownProps}) => (
+  {
+    messages,
+    ownProps
+  }
+);
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    pushMessage(message) {
+      dispatch(pushMessage(message))
+    }
+  }
+);
+
+@connect(mapStateToProps, mapDispatchToProps)
+export default class Index extends Component {
 
   config = {
     navigationBarTitleText: '首页'
   };
+
 
   constructor(props) {
     super(props);
@@ -47,24 +66,47 @@ class Index extends Component {
     return (
       <View className='box'>
         <AtNavBar
-          fixed='true'
+          fixed={true}
           title='导航栏示例'
           leftIconType='chevron-left'
           rightFirstIconType='bullet-list'
           rightSecondIconType='user'
         />
-        <View className='next-view'>
-          <View className='message-view'>
-            fdfdfd
-          </View>
-          <View className='send-view'>
-            fdfd
-          </View>
-          </View>
+        <View className='message-view'>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
+          <Text>fdfd</Text>
         </View>
-        )
-        }
-        }
+        <View className='send-view' onClick={this.pushMessage.bind(this, "fdfdfd")}>
+          fdfdffffffffffffffffffffffffff
+        </View>
+      </View>
+    )
+  }
+}
 
-        export default connect()(Index)
 

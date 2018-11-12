@@ -3,22 +3,19 @@
 }
 .box {
   display: flex;
-  width: 100%;
-  height: 100%;
-}
-.next-view {
-  margin-top: 50Px;
+  height: 100vh;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+
 }
 .message-view {
-  background-color: #aaa;
-  flex-grow: 1;
-  width: 100%;
+  margin-top: 50Px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow:auto;/* winphone8和android4+ */
+  -webkit-overflow-scrolling: touch; /* ios5+ */
 }
+
 .send-view {
-  background-color: #f6f6f6;
-  flex-grow: 0;
-  width: 100%;
+  height: 50Px;
 }
