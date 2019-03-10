@@ -65,6 +65,9 @@ DROP TABLE IF EXISTS `banner` CASCADE
 DROP TABLE IF EXISTS `auth` CASCADE
 ;
 
+DROP TABLE IF EXISTS `user_org_role` CASCADE
+;
+
 /* Create Tables */
 
 CREATE TABLE `work_group_member`
