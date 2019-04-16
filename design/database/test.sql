@@ -77,6 +77,7 @@ CREATE TABLE `work_group_member`
 	`user_account` VARCHAR(50) COMMENT '用户账号',
 	`chat_group_id` VARCHAR(32) COMMENT '群组ID',
 	`user_name` VARCHAR(50) COMMENT '用户名称',
+	`member_image_url` VARCHAR(255) COMMENT '头像地址',
 	CONSTRAINT `PK_work_group_member` PRIMARY KEY (`member_id`)
 ) COMMENT='工作群成员表'
 ;
@@ -88,6 +89,7 @@ CREATE TABLE `user_org`
 	`org_id` VARCHAR(32) COMMENT '组织ID',
 	`user_name` VARCHAR(50) COMMENT '用户名称',
 	`role_id` VARCHAR(32) COMMENT '部门角色ID',
+	`role_name` VARCHAR(50) COMMENT '部门角色名称',
 	`parent_org_id` VARCHAR(32) COMMENT '父组织ID',
 	`org_type` VARCHAR(20) COMMENT '组织类型',
 	`grade` VARCHAR(4) COMMENT '年级（在org_type为class类型是不能为空）',
@@ -186,6 +188,7 @@ CREATE TABLE `role`
 	`role_number` NUMERIC(10,2) COMMENT '角色数量',
 	`user_id` VARCHAR(32) COMMENT '创建用户编号',
 	`org_id` VARCHAR(32) COMMENT '创建组织编号',
+	`plaform` VARCHAR(32) COMMENT '角色所属平台'，
 	CONSTRAINT `PK_role` PRIMARY KEY (`role_id`)
 ) COMMENT='角色表： role_type用于区分班学生社团和机构的角色'
 ;
@@ -255,6 +258,7 @@ CREATE TABLE `feedback`
 	`create_time` DATETIME(0) COMMENT '创建时间',
 	`read_time` DATETIME(0) COMMENT '查阅时间',
 	`user_id` VARCHAR(32) COMMENT '查阅人ID',
+	`pub_user_id` VARCHAR(32) COMMENT '发布人ID',
 	`image_url_one` VARCHAR(255) COMMENT '图片URL',
 	`image_url_two` VARCHAR(255) COMMENT '图片URL',
 	CONSTRAINT `PK_feedback` PRIMARY KEY (`feedback_id`)
